@@ -23,7 +23,8 @@ userInput = prompt("Inserisci il cognome:");
 database.push(userInput);
 
 //ordine alfabeticamente i cognomi
-
+database.sort();
+console.log(database);
 
 //stampo la posizione del cognome inserito nel nuovo ordine alfabetico
 
