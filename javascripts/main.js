@@ -1,7 +1,7 @@
 //Chiedi all’utente il cognome, inseriscilo in un array con altri cognomi e stampa la lista ordinata alfabeticamente.
 //Scrivi a che posizione della lista il nuovo utente si trova
 
-
+var userInput;
 var database = [
 	"Piccini",
 	"Alessandri",
@@ -9,7 +9,7 @@ var database = [
 	"Tencono",
 	"Chiodoni",
 	"Frizzante",
-	"Halbert";
+	"Halbert",
 	"Francofono",
 	"Pindarico",
 	"Mazzetto",
@@ -19,7 +19,8 @@ var database = [
 
 
 //pusho il cognome inserito dall'utente nell'arrey con tutti i cognomi
-
+userInput = prompt("Inserisci il cognome:");
+database.push(userInput);
 
 //ordine alfabeticamente i cognomi
 
