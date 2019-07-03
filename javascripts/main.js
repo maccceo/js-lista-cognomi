@@ -1,7 +1,7 @@
 //Chiedi all’utente il cognome, inseriscilo in un array con altri cognomi e stampa la lista ordinata alfabeticamente.
 //Scrivi a che posizione della lista il nuovo utente si trova
 
-var userInput;
+var userInput, userInputPosition, found = false;
 var database = [
 	"Piccini",
 	"Alessandri",
@@ -26,7 +26,15 @@ database.push(userInput);
 database.sort();
 console.log(database);
 
-//stampo la posizione del cognome inserito nel nuovo ordine alfabetico
+//cerco il cognome inserito per capire la sua posizione
+for (var i = 0; i < database.length; i++) {
+	if (database[i] == userInput) {
+		userInputPosition = i;
+	}
+}
+console.log(userInput + " è all'indice " + userInputPosition);
+
+//stampo la posizione
 
 
 //stampo la lista alfabetica intera in un <ul>
