@@ -1,7 +1,10 @@
 //Chiedi all’utente il cognome, inseriscilo in un array con altri cognomi e stampa la lista ordinata alfabeticamente.
 //Scrivi a che posizione della lista il nuovo utente si trova
 
-var userInput, userInputPosition, found = false, print;
+var userInput, userInputPosition;
+//var <ul> HTML in cui stamperò l'array
+var printPosition = document.getElementById("position");
+var printArray = document.getElementById("array");
 var database = [
 	"Piccini",
 	"Alessandri",
@@ -18,7 +21,7 @@ var database = [
 ];
 
 
-//pusho il cognome inserito dall'utente nell'arrey con tutti i cognomi
+//pusho il cognome inserito dall'utente nell'array con tutti i cognomi
 userInput = prompt("Inserisci il cognome:");
 database.push(userInput);
 
@@ -26,24 +29,22 @@ database.push(userInput);
 database.sort();
 console.log(database);
 
-//cerco il cognome inserito per capire la sua posizione
+
 for (var i = 0; i < database.length; i++) {
+	//cerco il cognome inserito per capire il suo indice che salvo in una var
 	if (database[i] == userInput) {
 		userInputPosition = i;
+	}
+
+	//stampo ogni elemento dell'array nell'<ul> dell'HTML
+	if (i == userInputPosition) {
+		//se è quello inserito dall'utente stampa in grassetto
+		printArray.innerHTML += "<strong><li>" + database[i] + "</li></strong";
+	} else {
+		printArray.innerHTML += "<li>" + database[i] + "</li>";
 	}
 }
 
 //stampo la posizione
-userInputPosition++;
-document.getElementById("position").innerHTML = "L'elemento inserito è il " + userInputPosition + "° dell'elenco";
-
-//stampo la lista alfabetica intera in un <ul>
-print = document.getElementById("array");
-userInputPosition--;
-for (var i = 0; i < database.length; i++) {
-	if (i == userInputPosition) {
-		print.innerHTML += "<strong><li>" + database[i] + "</li></strong";
-	} else {
-		print.innerHTML += "<li>" + database[i] + "</li>";
-	}
-}
+userInputPosition++;		//visto che le persone contano dall'1
+printPosition.innerHTML = "L'elemento inserito è il " + userInputPosition + "° dell'elenco";
