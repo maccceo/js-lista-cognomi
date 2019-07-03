@@ -35,6 +35,7 @@ for (var i = 0; i < database.length; i++) {
 console.log(userInput + " è all'indice " + userInputPosition);
 
 //stampo la posizione
-
+userInputPosition++;
+document.getElementById("position").innerHTML = "L'elemento inserito è il " + userInputPosition + "° dell'elenco";
 
 //stampo la lista alfabetica intera in un <ul>
